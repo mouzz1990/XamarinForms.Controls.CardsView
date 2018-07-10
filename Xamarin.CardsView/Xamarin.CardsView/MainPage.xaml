@@ -2,13 +2,40 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Xamarin.CardsView"
+             xmlns:controls="clr-namespace:Xamarin.CardsView.Controls"
              x:Class="Xamarin.CardsView.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="20,10"/>
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+        <Label Grid.Row="0" Text="Cards view:" FontSize="Large" HorizontalOptions="Center"/>
+
+        <controls:CardsView Grid.Row="1" x:Name="cardView" Margin="20, 40, 20, 20" FrameColor="Pink">
+            <Label Text="TEST PEST"/>
+            <controls:CardsView.DisplayedContent>
+                <Label VerticalOptions="Center" HorizontalOptions="Center" Text="Some content..."/>
+            </controls:CardsView.DisplayedContent>
+        </controls:CardsView>
+
+        <Button Grid.Row="2" Text="Throw Left" x:Name="btnLeft" Clicked="btnLeft_Clicked"/>
+
+        <Button Grid.Row="3" Text="Throw Right" x:Name="btnRight" Clicked="btnRight_Clicked"/>
+
+        <Button Grid.Row="4" Text="Throw Random" x:Name="btnRandom" Clicked="btnRandom_Clicked"/>
+
+    </Grid>
 
 </ContentPage>

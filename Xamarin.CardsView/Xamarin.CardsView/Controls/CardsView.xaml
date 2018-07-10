@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Xamarin.CardsView.Controls"
+             x:Class="Xamarin.CardsView.Controls.CardsView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style TargetType="controls:FrameShadow">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid x:Name="mainGrid">
+            <controls:FrameShadow x:Name="thirdFrame" Scale="0.8" TranslationY="-20" Elevation="2"/>
+            <controls:FrameShadow x:Name="tempFrame" Scale="0.8" TranslationY="-20" Elevation="4"/>
+            <controls:FrameShadow x:Name="secondFrame" Scale="0.9" TranslationY="-10" Elevation="6"/>
+            <controls:FrameShadow x:Name="tempFrame2" Scale="0.9" TranslationY="-10" Elevation="8"/>
+            <controls:FrameShadow x:Name="mainContent" Scale="1" TranslationY="0" VerticalOptions="FillAndExpand" Elevation="10"/>
+            <controls:FrameShadow x:Name="fadingContent" Scale="1" TranslationY="0" VerticalOptions="FillAndExpand" Elevation="10"/>
+        </Grid>
+
+    </ContentView.Content>
+</ContentView>
